@@ -170,4 +170,4 @@ A work-in-progress corresponding Mvc app can be found at [https://github.com/elg
 
 Copyright 2023 Eliot Gronstal
 
-update within ParksDirectoryClient
+update in Client project
