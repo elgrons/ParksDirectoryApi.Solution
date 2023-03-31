@@ -8,7 +8,6 @@
 
 * _C#/.NET_
 * _SQL Workbench_
-* _MVC_
 * _Entity Framework_
 * _Identity_
 * _Swagger_
