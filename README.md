@@ -154,6 +154,9 @@ https://localhost:5001/api/Parks/1
 * Paging refers to getting a smaller selection of results from the ParksApi and browsing through them page by page.
 * Example pagination endpoint: Change the page number in the URL: https://localhost:5001/api/Parks/page/1
 
+## Corresponding Mvc App
+
+A work-in-progress corresponding Mvc app can be found at [https://github.com/elgrons/ParksDirectoryClient.Solution](https://github.com/elgrons/ParksDirectoryClient.Solution)
 
 ## Known Bugs
 
