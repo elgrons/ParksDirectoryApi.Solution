@@ -107,11 +107,11 @@ This program was built using _`Microsoft .NET SDK 6.0`_, and may not be compatib
 Explore the API endpoints in Postman or a browser. You will not be able to utilize authentication in a browser.
 
 ###  Swagger Documentation 
-To view the Swagger documentation for the TravelApi, launch the project using `dotnet run` using Terminal or Powershell, then input the following URL into your browser: `https://localhost:5001/swagger/index.html`
+To view the Swagger documentation for the ParksApi, launch the project using `dotnet run` using Terminal or Powershell, then input the following URL into your browser: `https://localhost:5001/swagger/index.html`
 
-### Destinations
+### Parks
 
-Get information about different global destinations.
+Get information about different national and state parks.
 
 #### HTTP Request Structure
 ```
@@ -129,8 +129,7 @@ GET https://localhost:5001/api/Parks/page/{page}
     "name": "string",
     "location": "string",
     "review": "string",
-    "rating": "int",
-    "userName": "string"
+    "rating": "int"
 }
 ```
 
@@ -145,9 +144,14 @@ https://localhost:5001/api/Parks/1
     "name": "Crater Lake National Park",
     "location": "Oregon",
     "review": "Excellent",
-    "rating": 10,
+    "rating": 10
 }
 ```
+## Pagination
+
+* Paging refers to getting a smaller selection of results from the ParksApi and browsing through them page by page.
+* Example pagination endpoint: Change the page number in the URL: https://localhost:5001/api/Parks/page/1
+
 
 ## Known Bugs
 
