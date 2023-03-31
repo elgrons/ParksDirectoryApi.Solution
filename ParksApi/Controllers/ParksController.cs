@@ -156,6 +156,10 @@ namespace ParksApiController.Controllers
 
       int parkCount = Math.Ceiling(_db.Destinations.Count(id));
 
+      int index = new Random().Next(count);
+
+      Park park = query.Skip(index).FirstOrDefault();
+
       return Ok(randoPark);
     }
   }
