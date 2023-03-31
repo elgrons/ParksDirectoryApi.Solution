@@ -152,12 +152,11 @@ namespace ParksApiController.Controllers
     public async Task<ActionResult<Park>> RandomPark(int id)
     {
       Park park = await _db.Parks.FindAsync(id);
+      int randoPark =  park.Math.Random(id);
 
-      // park.Random(id);
+      int parkCount = Math.Ceiling(_db.Destinations.Count(id));
 
-      return Ok(park);
+      return Ok(randoPark);
     }
   }
 }
-
-back from lunch
