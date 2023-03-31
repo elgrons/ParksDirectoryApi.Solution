@@ -18,7 +18,7 @@ namespace ParksApiController.Controllers
 
     // Pagination Code:
     [HttpGet("page/{page}")]
-    public async Task<ActionResult<List<Park>>> GetPages(int page)
+    public async Task<ActionResult<List<Park>>> GetPages(int page, int pageSize = 4)
     {
         if (_db.Parks == null)
         return NotFound();
@@ -32,7 +32,7 @@ namespace ParksApiController.Controllers
 
       var response = new ParkResponse
       {
-        Destinations = destinations,
+        Parks = parks,
         //page number inside the url
         CurrentPage = page,
         //the amount of parks returned from the database
@@ -76,7 +76,7 @@ namespace ParksApiController.Controllers
     [HttpGet("{id}")]
     public async Task<ActionResult<Park>> GetPark(int id)
     {
-      Park parl = await _db.Parks.FindAsync(id);
+      Park park = await _db.Parks.FindAsync(id);
 
       if (park == null)
       {
