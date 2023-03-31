@@ -145,5 +145,20 @@ namespace ParksApiController.Controllers
 
       return NoContent();
     }
+
+    //WIP: Random Park Endpoint
+    [Route("api/[controller]/random")]
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Park>> RandomPark(int id)
+    {
+      Park park = await _db.Parks.FindAsync(id);
+
+      if (park == null)
+      {
+        return NotFound();
+      }
+
+      return Ok(park);
+    }
   }
 }
