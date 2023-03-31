@@ -9,7 +9,6 @@
 * _C#/.NET_
 * _SQL Workbench_
 * _Entity Framework_
-* _Identity_
 * _Swagger_
 
 ## Description
@@ -22,9 +21,11 @@ There are custom endpoints for some of these user stories.
 
 * A user can GET reviews about a park.
 
-* A user can PUT and DELETE reviews, but only if their userName is attributed.
+* A user can PUT and DELETE reviews.
 
 * A user can access the API endpoint with a query parameter that specifies the page that should be returned.
+
+* A user can query the `random` API endpoint which will randomly select a park for a user.
 
 ## Setup/Installation Requirements
 _Requires console application such as Git Bash, Terminal, or PowerShell_
@@ -121,6 +122,7 @@ POST https://localhost:5001/api/Parks/
 PUT https://localhost:5001/api/Parks/{id}
 DELETE https://localhost:5001/api/Parks/{id}
 GET https://localhost:5001/api/Parks/page/{page}
+GET https://localhost:5001/api/Parks/random
 ```
 * To utilize the POST request and create a new instance of a destination, the following information is required.
 ```

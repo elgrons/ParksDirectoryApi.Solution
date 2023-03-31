@@ -146,21 +146,26 @@ namespace ParksApiController.Controllers
       return NoContent();
     }
 
-    // WIP: Random Park Endpoint
-    [Route("api/[controller]/random")]
-    [HttpGet("random/{id}")]
-    public async Task<ActionResult<Park>> RandomPark(int id)
+    // Random Park Endpoint
+    [HttpGet("random")]
+    public async Task<ActionResult<Park>> RandomPark()
     {
-      Park park = await _db.Parks.FindAsync(id);
-      int randoPark =  park.Math.Random(id);
+      int parks = await _db.Parks.CountAsync();
+      
+      if (parks == 0)
+        {
+          return NotFound();
+        }
 
-      int parkCount = Math.Ceiling(_db.Destinations.Count(id));
+      var random = new Random();
+      int randoPark = random.Next(0, parks);
 
-      int index = new Random().Next(count);
+      Park parkRandom = await _db.Parks
+        .OrderBy(park => park.ParkId)
+        .Skip(randoPark)
+        .FirstOrDefaultAsync();
 
-      Park park = query.Skip(index).FirstOrDefault();
-
-      return Ok(randoPark);
+      return Ok(parkRandom);
     }
   }
 }
